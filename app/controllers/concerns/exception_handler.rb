@@ -15,6 +15,7 @@ module ExceptionHandler
     rescue_from RestClient::NotFound, with: :not_found_rest
     rescue_from RestClient::Forbidden, with: :locked
     rescue_from NoMethodError, with: :locked
+    rescue_from NotImplementedError, with: :locked
   end
 
   # :nodoc:
