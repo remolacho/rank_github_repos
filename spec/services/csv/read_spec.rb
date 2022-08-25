@@ -3,9 +3,9 @@
 require 'rails_helper'
 
 describe Csv::Read, type: :service do
-  context 'Validate allowed instances' do
-    it 'the instance not found' do
-      expect{Rank::Get.build({kind: "test"})}.to raise_error(NotImplementedError)
+  context 'Read file CSV' do
+    it 'verify if it is not empty' do
+      expect(Csv::Read.table.empty?).to eq false
     end
   end
 end

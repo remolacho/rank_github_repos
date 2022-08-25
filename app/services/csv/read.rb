@@ -2,15 +2,14 @@ require 'csv'
 
 module Csv
   class Read
-    include Singleton
 
-    def rows
-      @rows ||= get_rows
+    def self.table
+      @table ||= get_rows
     end
 
     private
 
-    def get_rows
+    def self.get_rows
       records = []
 
       CSV.foreach(Rails.root.join('storage/rank.csv').to_s,
@@ -27,7 +26,7 @@ module Csv
 
     private
 
-    def header
+    def self.header
       %w[rank item repo_name stars forks language repo_url username issues last_commit description]
     end
   end

@@ -7,12 +7,8 @@ module DataSet
 
     private
 
-    def table_items
-      @table_items ||= table.rows.group_by{|d| d["item"]}
-    end
-
     def table
-      @table ||= Csv::Read.instance
+      @table ||= Csv::Read.table
     end
   end
 end
