@@ -28,7 +28,7 @@ module Rank
       end
 
       def search
-        @search ||= records.sort_by{|r| r['rank']}
+        @search ||= records.sort_by{|r| r['rank'].to_i}
       end
     end
   end
